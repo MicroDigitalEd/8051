@@ -1,0 +1,26 @@
+﻿		ACALL	 LCD_SET_UP	
+		MOV 	 TMOD,#00000110B	
+		MOV	 TH0,#-60		
+		SETB	 P3.4			
+AGAIN:	SETB	 TR0			
+BACK:		MOV	 A,TL0		
+		ACALL	 CONV			
+		ACALL	 DISPLAY		
+		JNB	 TF0,BACK		
+		CLR	 TR0			
+		CLR	 TF0			
+  		SJMP	 AGAIN		
+CONV:		MOV	B,#10			
+		DIV	AB
+		MOV	R2,B			
+		MOV	B,#10			
+		DIV	AB
+		ORL	A,#30H		
+		MOV	R4,A			
+		MOV	A,B	
+		ORL	A,#30H		
+		MOV	R3,A			
+		MOV	A,R2	
+		ORL	A,#30H		
+		MOV	R2,A			
+		RET

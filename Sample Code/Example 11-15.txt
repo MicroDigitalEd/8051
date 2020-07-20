@@ -1,0 +1,35 @@
+﻿#include <reg51.h>
+sbit SW    = P1^7;
+sbit IND   = P1^0;
+sbit WAVE  = P2^5;
+void timer0(void) interrupt 1
+  {
+    WAVE = ~WAVE;	
+  }
+void serial0() interrupt 4
+  {
+    if(TI == 1)
+      {
+        SBUF = 'A';	
+        TI = 0;		
+      }
+    else
+      {
+        RI = 0;		
+      }
+  }
+void main()
+  {
+    SW = 1;		
+    TH1 = -3;		
+    TMOD = 0x22;	
+    TH0 = 0xA4;		
+    SCON = 0x50;   
+    TR0 = 1;
+    TR1 = 1;			
+    IE = 0x92;		
+    while(1)		
+      {
+        IND = SW;	
+      }
+  }

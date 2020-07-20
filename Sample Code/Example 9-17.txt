@@ -1,0 +1,15 @@
+﻿		MOV	TMOD,#2H		
+						
+		MOV	TH0,#-150		
+AGAIN:	SETB	P1.3			
+		ACALL DELAY
+		ACALL DELAY
+		CLR	P1.3			
+		ACALL DELAY
+		SJMP	AGAIN
+DELAY:		
+		SETB	TR0			
+BACK:		JNB	TF0,BACK		
+		CLR	TR0			
+		CLR	TF0			
+		RET

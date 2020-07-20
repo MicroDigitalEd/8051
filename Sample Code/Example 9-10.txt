@@ -1,0 +1,11 @@
+﻿		CLR	P2.3			
+		MOV	TMOD,#01		
+HERE:		MOV	TL0,#0		
+		MOV	TH0,#0EEH		
+		SETB	P2.3			
+		SETB	TR0			
+AGAIN:	JNB	TF0,AGAIN		
+						
+		CLR	P2.3			
+		CLR	TR0			
+		CLR	TF0			

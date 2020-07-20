@@ -1,0 +1,23 @@
+﻿#include <reg51.h>
+void T0M2Delay(void);
+sbit mybit=P1^5;
+void main(void)
+  {
+    unsigned char x, y;
+    while(1)
+      {
+        mybit=~mybit;			
+        for(x=0;x<250;x++)		
+          for(y=0;y<36;y++)	
+            T0M2Delay();
+      }
+  }
+void T0M2Delay(void)
+  {
+    TMOD=0x02;			
+    TH0=-23;			
+    TR0=1;				
+    while(TF0==0);		
+    TR0=0;				
+    TF0=0;				
+  }

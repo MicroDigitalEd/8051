@@ -1,0 +1,15 @@
+﻿		ORG	0
+		LJMP	MAIN
+		ORG	000BH			
+		CPL	P1.2			
+		MOV	TL0,#00		
+		MOV	TH0,#0DCH
+		RETI				
+		ORG	30H			
+MAIN:		MOV	TMOD,#00000001B	
+		MOV	TL0,#00
+		MOV	TH0,#0DCH
+		MOV	IE,#82H		
+		SETB	TR0			
+HERE:		SJMP	HERE			
+		END

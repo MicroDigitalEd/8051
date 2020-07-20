@@ -1,0 +1,10 @@
+﻿		MOV	TMOD,#10H		
+		MOV	R3,#200		
+AGAIN:	MOV	TL1,#08H		
+		MOV	TH1,#01H		
+		SETB	TR1			
+BACK:		JNB	TF1,BACK		
+		CLR	TR1			
+		CLR	TF1			
+		DJNZ	R3,AGAIN 		
+						
