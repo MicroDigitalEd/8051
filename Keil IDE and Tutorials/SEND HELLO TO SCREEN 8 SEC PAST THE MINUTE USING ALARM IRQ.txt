@@ -1,0 +1,70 @@
+﻿ 	ORG	0
+ 	LJMP	MAIN		
+ 	ORG 	03
+ 	LJMP ISR_EX0	
+ 	ORG 	100H
+MAIN: 		
+	MOV 	IE,#81H	
+	SETB	TCON.1  	
+	MOV	TMOD,#20H	
+	MOV 	SCON,#50H
+	MOV 	TH1,#-3 	
+	SETB TR1
+	MOV 	R0,#10 	
+	MOV 	A,#2DH 	
+	MOVX	@R0,A 	
+	MOV 	R0,#11 	
+   	MOV 	A,#83H  	
+   	ACALL DELAY
+   	MOVX	@R0,A  	
+   	ACALL DELAY
+	PLACE THE CODE HERE
+	MOV 	R0,#1    	
+   	MOV	A,#08 	
+	MOVX	@R0,A  	
+ 	MOV 	R0,#3  	
+	MOV 	A,#0FFH 	
+   	MOVX	@R0,A  	
+   	MOV 	R0,#5	
+	MOV 	A,#0FFH 	
+   	MOVX	@R0,A  	
+	ACALL DELAY 
+   	MOV 	R0,#11 	
+	MOV 	A,#23H  	
+   	MOVX	@R0,A  	
+	PLACE READING TIME CODE HERE
+SERIAL:
+	CLR	IE.7 	
+	MOV 	SBUF,A
+S1:	JNB 	TI,S1
+	CLR 	TI
+	SETB	IE.7  	
+	RET
+	ORG 500H		
+ISR_EX0:
+	MOV 	R0,#12 	
+	ACALL DELAY
+	MOVX	A,@R0  
+	MOV 	R0,#11 	
+	ACALL DELAY 
+   	MOVX	A,@R0
+   	ACALL DELAY
+	SETB	ACC.3	
+   	SETB	P1.7	
+   	ACALL DELAY
+   	MOVX	@R0,A  	
+	MOV 	A,#'Y'
+	ACALL SERIAL
+	MOV 	A,#'E'
+	ACALL SERIAL
+	MOV 	A,#'S'
+	ACALL SERIAL
+	ACALL DELAY_1 	
+	MOV 	R0,#11 	
+	ACALL DELAY 
+   	MOVX	A,@R0
+   	CLR	ACC.3  	
+   	ACALL DELAY 	
+   	MOVX	@R0,A	
+   	CLR	P1.7   	
+    	RETI			

@@ -1,0 +1,24 @@
+﻿#include <reg51.h>
+#include <absacc.h> 		
+sfr PMRREG = 0xC4; 		
+void main(void)
+  { 
+    code unsigned char msg[]= "HELLO";	
+    unsigned char x;
+    PMRREG = PMRREG | 0x1;		
+    TMOD = 0x20;       		
+    TH1  = 0xFD;       		
+    SCON = 0x50;
+    TR1  = 1;
+    for(x=0; x<5;x++)	 
+      {
+        XBYTE[0x0+x] = msg[x];
+      }
+    for(x=0; x<5;x++)	 
+      { 
+        SBUF = XBYTE[0x0+x];
+        while(TI==0);
+        TI=0;
+      }
+    while(1); 				
+}

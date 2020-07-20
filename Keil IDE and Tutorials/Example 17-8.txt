@@ -1,0 +1,26 @@
+﻿#include <reg51.h>
+sbit SW = P2^7
+sbit ENABLE = P1^0
+sbit MTR_1 = P1^1
+sbit MTR_2 = P1^2
+void main()
+  {
+  SW = 1
+  ENABLE = 0
+  MTR_1 = 0
+  MTR_2 = 0
+  while(1)
+    {
+      ENABLE = 1
+      if(SW == 1)
+        {
+          MTR_0 = 1
+          MTR_1 = 0
+        }
+      else
+        {
+          MTR_0 = 0
+          MTR_1 = 1
+        }
+    }
+  }

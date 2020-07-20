@@ -1,0 +1,24 @@
+﻿#include <reg51.h>	
+sbit	CS = P2^0;			
+sbit	SCLK = P2^1;
+sbit	DIN = P2^2;	
+sbit	DOUT = P2^3;
+sbit	MSBRA =  ACC^7;
+void main(void)
+  {
+    unsigned char conbyte=0x9E;		
+    unsigned char x;		
+    ACC=conbyte;
+    CS=0;
+    for(x=0; x<8; x++)
+     {
+       SCLK=0;
+       DIN=MSBRA;  		
+       Delay();
+       SCLK=1;     		
+       Delay();
+       ACC = ACC << 1;	
+      }
+    CS=1;    			
+    SCLK=0;			
+  }
