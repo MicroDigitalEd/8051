@@ -1,4 +1,0 @@
-﻿	ACALL DELAY_200ms 
-	MOV	R0,#10		
-	MOV	A,#20H		
-	MOVX	@R0,A		
