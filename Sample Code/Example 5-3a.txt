@@ -1,0 +1,6 @@
+﻿	MOV A,#55H	
+	MOV 40H,A		
+	MOV 41H,A		
+	MOV 42H,A		
+	MOV 43H,A		
+	MOV 44H,A		

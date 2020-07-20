@@ -1,0 +1,4 @@
+﻿	LED		BIT	 P.7		
+ 	HERE:	CPL	 LED		
+			LCALL DELAY	
+			SJMP	 HERE	

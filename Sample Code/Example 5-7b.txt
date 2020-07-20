@@ -1,0 +1,16 @@
+﻿  		ORG	0000
+  		MOV 	DPTR,#MYDATA  	
+     	MOV 	R0,#40H   	
+  BACK:	CLR 	A         	
+    		MOVC	A,@A+DPTR 	
+    		JZ  	HERE   		
+    		MOV 	@R0,A   		
+        	INC 	DPTR        	
+       	INC 	R0       		
+     	SJMP	BACK         	
+  HERE: 	SJMP	HERE
+ 
+  		ORG 	250H
+  MYDATA:	DB 	"AMERICA",0  	
+						
+         END

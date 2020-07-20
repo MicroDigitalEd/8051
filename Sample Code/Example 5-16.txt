@@ -1,0 +1,6 @@
+﻿   	HERE:JNB	 P2.3,HERE	
+		CLR	 P1.5		
+		ACALL DELAY
+		SETB	 P1.5		
+		ACALL DELAY
+		SJMP	 HERE

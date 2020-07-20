@@ -1,0 +1,3 @@
+﻿		CLR	PSW.3
+		SETB	PSW.4
+	 	MOV	R7,A

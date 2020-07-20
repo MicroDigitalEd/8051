@@ -1,0 +1,5 @@
+﻿	SW		BIT	P1.7		
+	LED		BIT	P2.0		
+ 	HERE:	MOV	C,SW		
+			MOV	LED,C	
+			SJMP	HERE		

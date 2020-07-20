@@ -1,0 +1,4 @@
+﻿	MOV	A,37H	
+	JNB	ACC.0,YES	
+	INC	A		
+YES:	MOV	P2,A	 	

@@ -1,0 +1,13 @@
+﻿	PHONBIT BIT 12H	
+	MOV	 C,PHONBIT	
+	JNC	 NO			
+	MOV	 DPTR,#400H	
+	LCALL DISPLAY		
+	SJMP	 EXIT		
+NO:	MOV	 DPTR,#420H	
+	LCALL DISPLAY		
+EXIT:				
+		ORG	400H
+YES_MG:	DB	"New Messages",0
+		ORG 	420H
+NO_MG:	DB	"No New Messages",0 

@@ -1,0 +1,7 @@
+﻿	CLR	06		
+	CLR	07		
+	JNB	P1.2,OVER	
+	SETB	06		
+OVER:JNB	P1.3,NEXT	
+	SETB	07		
+NEXT:... 

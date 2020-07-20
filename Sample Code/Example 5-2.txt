@@ -1,0 +1,9 @@
+﻿	PUSH	05		
+	PUSH	06		
+	PUSH	0E0H		
+	POP	0F0H		
+				
+	POP 	02		
+				
+	POP 	03		
+				

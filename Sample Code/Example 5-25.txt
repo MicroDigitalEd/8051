@@ -1,0 +1,9 @@
+﻿	SW		EQU	97H			
+	MYDATA 	EQU	0A0H			
+	HERE:	MOV	C,SW	
+			JC	OVER
+			MOV	MYDATA,#'0'	
+			SJMP	HERE		
+	OVER:	MOV	MYDATA,#'1'	
+			SJMP	HERE
+			END

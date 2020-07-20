@@ -1,0 +1,4 @@
+﻿	MOV 	A,R5		
+		JNZ	NEXT		
+		MOV 	R5,#55H
+NEXT:	...	

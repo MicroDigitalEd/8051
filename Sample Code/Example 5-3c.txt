@@ -1,0 +1,6 @@
+﻿	  MOV  A,#55	
+	  MOV  R0,#40H	
+	  MOV  R2,#05	
+AGAIN: MOV  @R0,A	
+	  INC  R0		
+	  DJNZ R2,AGAIN	

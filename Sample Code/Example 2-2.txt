@@ -1,0 +1,2 @@
+﻿		MOV A,#38H
+		ADD A,#2FH	

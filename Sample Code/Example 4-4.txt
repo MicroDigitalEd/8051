@@ -1,0 +1,4 @@
+﻿   	HERE:JNB	P2.3,HERE		
+		SETB	P1.5			
+		CLR	P1.5			
+ 		SJMP	HERE			

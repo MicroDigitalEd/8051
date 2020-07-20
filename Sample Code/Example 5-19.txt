@@ -1,0 +1,3 @@
+﻿ HERE:	MOV	C,P1.7	
+		MOV	P2.0,C	
+		SJMP	HERE		

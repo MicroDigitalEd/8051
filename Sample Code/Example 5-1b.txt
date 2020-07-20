@@ -1,0 +1,3 @@
+﻿	MOV A,#55H	
+	MOV 90H,A		
+	MOV 0A0H,A	

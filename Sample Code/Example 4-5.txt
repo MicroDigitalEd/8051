@@ -1,0 +1,6 @@
+﻿		SETB	P1.7	  		
+AGAIN:	JB	P1.2,OVER 	
+		MOV	P2,#'N'		
+		SJMP	AGAIN		
+OVER:	MOV	P2,#'Y' 		
+		SJMP	AGAIN		

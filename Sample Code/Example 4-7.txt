@@ -1,0 +1,4 @@
+﻿		SETB	P1.7	  		
+AGAIN:	MOV	C,P1.0 		
+		MOV 	P2.7,C		
+		SJMP	AGAIN		

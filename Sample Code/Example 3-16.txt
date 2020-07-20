@@ -1,0 +1,7 @@
+﻿DELAY:	MOV	R3,#250		
+HERE:	NOP			
+		NOP		
+		NOP		
+		NOP		
+		DJNZ	R3,HERE	
+		RET  		
