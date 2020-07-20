@@ -1,8 +1,0 @@
-﻿	MOV	R0,#10	
-	MOV	A,#2EH	
-	MOVX	@R0,A	
-MOV	R0,#11	
-	MOVX	A,@R0 	
-	ACALL DELAY	
-	SETB ACC.3	
-	MOVX	@R0,A	
