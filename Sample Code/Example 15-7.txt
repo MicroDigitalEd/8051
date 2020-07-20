@@ -1,0 +1,13 @@
+﻿#include <reg51.h>
+#include <absacc.h>
+void main()
+  {
+    unsigned char value;
+    XDATA[0x4003]=0x90;		
+    while(1)
+      {
+        value = XDATA[0x4000];	
+        XDATA[0x4001]=value;	
+        XDATA[0x4002]=value;	
+      }
+  }

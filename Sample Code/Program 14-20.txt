@@ -1,0 +1,21 @@
+﻿#include <reg51.h>
+#include <absacc.h>  
+unsigned char msg[5]="Hello";
+void main(void)
+  {
+    unsigned char x;	
+    TMOD = 0x20;  
+    TH1  = 0xFD;  
+    SCON = 0x50;   
+    TR1  = 1;
+    
+    for(x=0;x<5;x++)	
+      XBYTE[0x000+x] = msg[x]; 
+    
+    for(x=0;x<5;x++)	
+      {
+        SBUF = XBYTE[0x000+x]; 
+        while(TI==0);
+        TI=0;
+      }
+  }

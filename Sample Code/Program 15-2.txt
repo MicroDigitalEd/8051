@@ -1,0 +1,68 @@
+﻿		MOV 	A,#80H		
+		MOV	R0,#CNTPORT	
+		MOVX @R0,A			
+		MOV	A,#38H		
+		ACALL NCMDWRT		
+		MOV	A,#0EH		
+		ACALL NCMDWRT		
+		MOV	A,#01H		
+		ACALL NCMDWRT		
+		MOV	A,#06			
+		ACALL NCMDWRT		
+		.....				
+		MOV	A,#'N'		
+		ACALL NDATAWRT		
+		MOV	A,#'O'		
+		CALL NDATAWRT		
+		....				
+NCMDWRT:	MOV	R2,A			
+		MOV	A,#90H		
+		MOV	R0,#CNTPORT	
+		MOVX	@R0,A			
+		MOV	A,#00000110B	
+		MOV	R0,#BPORT		
+		MOVX	@R0,A			
+		MOV	R0,#APORT		
+READY:	MOVX	A,@R0			
+		RLC	A			
+		JC	READY			
+		MOV	A,#80H		
+		MOV	R0,#CNTPORT	
+		MOVX	@R0,A			
+		MOV	A,R2			
+		MOV	R0,#APORT		
+		MOVX	@R0,A			
+		MOV	R0,#BPORT		
+		MOV	A,#00000100B	
+		MOVX	@R0,A			
+		NOP				
+		NOP
+		MOV	A,#00000000B	
+		MOVX	@R0,A			
+		RET
+NDATAWRT:	
+		MOV	R2,A			
+		MOV	A,#90H		
+		MOV	R0,#CNTPORT	
+		MOVX	@R0,A			
+		MOV	A,#00000110B	
+		MOV	R0,#BPORT		
+		MOVX	@R0,A			
+		MOV	R0,#APORT		
+READY:	MOVX	A,@R0			
+		RLC	A			
+		JC	READY			
+		MOV	A,#80H		
+		MOV	R0,#CNTPORT	
+		MOVX	@R0,A			
+		MOV	A,R2			
+		MOV	R0,#APORT		
+		MOVX	@R0,A			
+		MOV	R0,#BPORT		
+		MOV	A,#00000101B	
+		MOVX	@R0,A			
+		NOP				
+		NOP
+		MOV	A,#00000001B	
+		MOVX	@R0,A			
+		RET			

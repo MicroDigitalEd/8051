@@ -1,0 +1,9 @@
+﻿		MOV	A,#90H		
+		MOV	DPTR,#1003H
+		MOVX @DPTR,A		
+		MOV	DPTR,#1000H	
+		MOVX A,@DPTR		
+		INC	DPTR			
+		MOVX @DPTR,A		
+		INC  DPTR			
+		MOVX @DPTR,A		

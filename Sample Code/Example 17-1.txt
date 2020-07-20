@@ -1,0 +1,12 @@
+﻿		MOV	A,#66H	
+BACK:	MOV	P1,A		
+		RR	A		
+		ACALL DELAY	
+		SJMP	BACK		
+		...
+DELAY	
+		MOV	R2,#100	
+H1:		MOV	R3,#255
+H2:		DJNZ	R3,H2
+		DJNZ	R2,H1
+		RET			

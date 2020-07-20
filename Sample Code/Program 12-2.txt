@@ -1,0 +1,40 @@
+﻿	MOV	A,#38H 		
+	ACALL	COMMAND    	
+	MOV	A,#0EH     	
+	ACALL	COMMAND    	
+	MOV	A,#01H     	
+	ACALL	COMMAND    	
+	MOV	A,#06H     	
+	ACALL	COMMAND    	
+	MOV	A,#86H     	
+	ACALL	COMMAND    	
+	MOV	A,#'N'     	
+	ACALL	DATA_DISPLAY
+	MOV	A,#'O'     	
+	ACALL	DATA_DISPLAY
+HERE:	SJMP	HERE      	
+COMMAND:	ACALL	READY      	
+	MOV	P1,A       	
+	CLR	P2.0       	
+	CLR	P2.1       	
+	SETB	P2.2       	
+	CLR	P2.2       	
+	RET
+DATA_DISPLAY:
+	ACALL	READY      	
+	MOV	P1,A       	
+	SETB	P2.0       	
+	CLR	P2.1       	
+	SETB	P2.2       	
+	ACALL	DELAY		
+	CLR	P2.2       	
+	RET
+READY:	SETB	P1.7			
+	CLR	P2.0      	
+	SETB	P2.1      	
+BACK:	CLR	P2.2     		
+	ACALL	DELAY		
+	SETB	P2.2       	
+	JB	P1.7,BACK  	
+	RET
+	END

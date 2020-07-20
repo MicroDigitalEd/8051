@@ -1,0 +1,9 @@
+﻿		MOV	A,#80H	
+		MOV	R1,#CRPORT	
+		MOVX	@R1,A		
+		MOV	R1,#APORT 	
+		MOV	A,#66H	
+AGAIN:	MOVX @R1,A		
+		RR	A		
+		ACALL DELAY	
+		SJMP AGAIN

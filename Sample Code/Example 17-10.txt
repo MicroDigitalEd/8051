@@ -1,0 +1,42 @@
+﻿#include <reg51.h>
+sbit MTR = P1^0
+void MSDelay(unsigned int value)
+void main()
+  {
+  unsigned char z
+  P2 = 0xFF
+  z = P2
+  z = z & 0x03
+  MTR = 0
+  while(1)
+    {
+     switch(z)
+       {
+       case(0):
+         {
+           MTR = 1
+           MSDelay(25)
+           MTR = 0
+           MSDelay(75)
+           break
+         }
+       case(1):
+         {
+           MTR = 1
+           MSDelay(50)
+           MTR = 0
+           MSDelay(50)
+           break
+         }
+       case(2):
+         {
+           MTR = 1
+           MSDelay(75)
+           MTR = 0
+           MSDelay(25)
+           break
+         }
+       default:
+         MTR = 1
+    }
+  }
