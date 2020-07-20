@@ -1,0 +1,4 @@
+﻿	 MOV	C,P1.2	
+	 MOV	06,C		
+	 MOV	C,P1.3	
+	 MOV	07,C		

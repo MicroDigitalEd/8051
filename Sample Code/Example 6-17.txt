@@ -1,0 +1,2 @@
+﻿     MOV  A,#35H	
+     ANL  A,#0FH	

@@ -1,0 +1,9 @@
+﻿	MOV A,#41H
+	SETB P2.1		
+	SETB	P2.1		
+	MOV R5, #8
+HERE:RRC	A
+	MOV	P2.1,C	
+	DJNZ R5, HERE
+ 	SETB P2.1		
+	SETB	P2.1		

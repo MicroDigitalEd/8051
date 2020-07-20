@@ -1,0 +1,10 @@
+﻿sbit MYBIT = 0x95;	
+void main(void)
+  {
+    unsigned int z;
+    for(z=0;z<50000;z++)
+      {
+        MYBIT=1;
+        MYBIT=0;
+      }
+  }

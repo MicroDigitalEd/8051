@@ -1,0 +1,14 @@
+﻿#include <reg51.h>
+sbit P1b0 =  P1^0;
+sbit ACCMSB = ACC^7;
+void main(void)
+  { 
+    unsigned char conbyte = 0x44;
+    unsigned char x;
+    for(x=0; x<8; x++)
+      {
+        ACCMSB = P1b0;
+        ACC = ACC >> 1;
+      }
+    P2=ACC; 
+  }

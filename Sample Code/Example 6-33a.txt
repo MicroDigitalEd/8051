@@ -1,0 +1,2 @@
+﻿	MOV	A,#72H	
+	SWAP	A		

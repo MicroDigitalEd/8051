@@ -1,0 +1,9 @@
+﻿		MOV	DPTR,#MYTABLE
+		MOV	A,P1		
+		ANL	A,#07H	
+		MOVC	A,@A+DPTR	
+		MOV	P2,A		
+		SJMP	$		
+		ORG 400H
+MYTABLE	DB	'0','1','2','3','4','5','6','7'
+		END

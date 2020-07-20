@@ -1,0 +1,5 @@
+﻿	MOV	A,#72H	
+	RL	A		
+	RL	A		
+	RL	A		
+	RL	A		

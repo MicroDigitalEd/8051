@@ -1,0 +1,13 @@
+﻿#include <reg51.h>
+sbit P1b0 = P1^0;
+sbit regALSB = ACC^0;
+void main(void)
+  { 
+    unsigned char x;
+    for(x=0; x<8; x++)
+      {
+        regALSB = P1b0;
+        ACC = ACC << 1;
+      }
+    P2=ACC; 
+  }

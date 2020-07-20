@@ -1,0 +1,3 @@
+﻿		MOV	A,#85H		
+		CPL	A		
+		ADD 	A,#1		

@@ -1,0 +1,9 @@
+﻿  #include <reg51.h>
+  void main(void)
+    {
+      P1='H';
+      P1='E';
+      P1='L';
+      P1='L';
+      P1='O';
+    }

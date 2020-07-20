@@ -1,0 +1,12 @@
+﻿#include <reg51.h>
+void main(void)
+  {
+    unsigned char mydata[100];	
+    unsigned char x,z=0;
+    for(x=0;x<100;x++)
+      {
+        z--;        			
+        mydata[x]=z; 		
+        P1=z;       			
+      }
+  }

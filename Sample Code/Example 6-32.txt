@@ -1,0 +1,7 @@
+﻿       	MOV	R1,#0 	
+      	MOV  R7,#8 	
+      	MOV  A,#97H	
+ AGAIN:	RLC  A      	
+         JNC  NEXT    	
+         INC  R1       	
+ NEXT:	DJNZ R7,AGAIN 	

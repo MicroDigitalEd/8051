@@ -1,0 +1,3 @@
+﻿	 MOV	 P1,#0FFH		
+HERE: MOV	 A,P1		
+	 CJNE A,#63,HERE	

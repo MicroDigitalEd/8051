@@ -1,0 +1,10 @@
+﻿			MOV	R4,#0	
+			MOV	R0,#40H	
+			MOV	R2,#05	
+			MOV	A,#65	
+	BACK:	CJNE A,@R0,NEXT
+			MOV	R4,R0 	
+			SJMP EXIT	 	
+	NEXT:	INC	R0		
+			DJNZ R2,BACK	
+	EXIT		... 
